@@ -28,14 +28,12 @@ function calculate(){
     let calculation=arr.SalaryAmount;
     if(arr.EidBonus=="yes"){
         calculation=calculation+arr.SalaryAmount*0.4-2000;
-        console.log("eidb"+calculation);
     }
     if(arr.SalaryAmount<40000){
      calculation=calculation+250*arr.NightShifts;
     }
         calculation= calculation+400*arr.NightShifts+(arr.SalaryAmount/30)*1.5*arr.OTs+(arr.SalaryAmount/30)*2.85*arr.EidCoverage;
         calculation= calculation-arr.Food*30;
-        console.log("nan"+!(isNaN(calculation)));
         if(!(isNaN(calculation))){
             document.getElementById('submit').remove();
             document.getElementById('result-div').innerHTML="You have got approximately: "+ calculation +"Tk"+ "";
