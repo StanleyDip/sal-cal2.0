@@ -85,6 +85,10 @@ input[type=number] {
     }
     .sal-cal-form-element{
         width: 93%;
+        gap:0.5rem;
+    }
+    .hero{
+        height: 175px;
     }
 
 }
