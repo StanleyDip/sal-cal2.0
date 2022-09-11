@@ -22,12 +22,12 @@
     <div class="sal-cal-main-container">
 
     
-<section class="sal-cal-form-element">
+<form class="sal-cal-form-element" id="form" action="/" method="POST">
 
-    <h3>Calculate this Month's Salary&nbsp;&nbsp;&nbsp;<i id="re" onClick='window.location.reload();' class="fa-solid fa-rotate-right"></i></h3>
-
+    <h3 id="mon">Calculate This Month's Salary&nbsp;&nbsp;&nbsp;<i id="re" onClick='window.location.reload();' class="fa-solid fa-rotate-right"></i></h3>
+    <h3 id="error"></h3>
     <label class="in">Monthly Salary Amount</label>
-    <input name="Salary Amount" type="number" id="sal-amount" placeholder="Enter your Monthly Salary Amount"  >
+    <input name="Salary Amount" type="number" id="sal-amount" placeholder="Enter your Monthly Salary Amount"  required>
 
     <label class="in">Total Number of Night shifts</label>
     <input name="Number of Night Shifts" type="number" id="night-shifts" placeholder="Enter Number of Night shifts"  value="0" >
@@ -55,7 +55,7 @@
     
     <button type="submit" id="submit">Calculate Now!</button>
     <h3 id="result-div"></h3> 
-  </section>
+  </form>
 <section class="sal-cal-hero-img"> 
   <figure><img class="hero" src="images/hero.png" alt="card"></figure>
 </section>

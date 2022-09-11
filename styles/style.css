@@ -34,7 +34,7 @@ body{
 
 }
 h3{
-font-size: 2.7rem;;
+font-size: 2rem;;
 color: #38d398;
 }
 #re{
@@ -43,6 +43,46 @@ color: #38d398;
 #re:hover{
     transform: rotate(270deg);
     transition: 2s;
+}
+
+#re-re{
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    cursor: pointer;
+}
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+#error{
+    color: red;
 }
 .in{
     font-size: 1.5rem;
@@ -89,6 +129,14 @@ input[type=number] {
     }
     .hero{
         height: 175px;
+    }
+
+}
+
+@media screen and (max-height:650x) {
+    
+    .hero{
+        height: 100px;
     }
 
 }
