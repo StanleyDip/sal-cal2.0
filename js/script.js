@@ -35,13 +35,15 @@ success= false;
        
    
     let calculation=arr.SalaryAmount;
-    if(arr.EidBonus=="yes"){
+    if(arr.EidBonus=="yes"&& arr.SalaryAmount>3000){
         calculation=calculation+arr.SalaryAmount*0.4-2000;
     }
-    if(arr.SalaryAmount<40000){
+    if(arr.SalaryAmount<39999){
      calculation=calculation+250*arr.NightShifts;
-    }
-        calculation= calculation+400*arr.NightShifts+(arr.SalaryAmount/30)*1.5*arr.OTs+(arr.SalaryAmount/30)*2.85*arr.EidCoverage;
+    }else(
+       calculation= calculation+400*arr.NightShifts 
+    )
+        calculation= calculation+(arr.SalaryAmount/30)*1.5*arr.OTs+(arr.SalaryAmount/30)*2.85*arr.EidCoverage;
         calculation= calculation-arr.Food*30;
         if(!(isNaN(calculation))){
             if(success==true){

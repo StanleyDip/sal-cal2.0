@@ -43,17 +43,18 @@ color: #38d398;
 #re:hover{
     transform: rotate(270deg);
     transition: 2s;
-}
-
-#re-re{
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
     cursor: pointer;
 }
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+
+/* #re-re{
+    -webkit-animation: rotating 2s linear ;
+    -moz-animation: rotating 2s linear ;
+    -ms-animation: rotating 2s linear ;
+    -o-animation: rotating 2s linear ;
+    animation: rotating 2s linear ;
+    cursor: pointer;
+} */
+/* @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
       -webkit-transform: rotate(0deg);
       -o-transform: rotate(0deg);
@@ -80,7 +81,7 @@ color: #38d398;
       -o-transform: rotate(360deg);
       transform: rotate(360deg);
     }
-  }
+  } */
 #error{
     color: red;
 }
