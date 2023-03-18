@@ -76,7 +76,7 @@ success= false;
                 td2.setAttribute('id', 'table_ot');
                 document.getElementById('creator_ot').appendChild(td1);
                 document.getElementById('creator_ot').appendChild(td2);
-            document.getElementById('table_ot_header').innerHTML= "Total "+arr.OTs+" OT's received";          
+            document.getElementById('table_ot_header').innerHTML= "Total "+arr.OTs+" OT's";          
         document.getElementById('table_ot').innerHTML="+"+ot_amount;
             }
             if(arr.Food>0){
