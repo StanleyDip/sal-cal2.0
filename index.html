@@ -14,58 +14,131 @@
     />
 
     <!-- CSS linking -->
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SalCal</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>SalCal2.0</title>
   </head>
   <body>
     <div class="sal-cal-main-container">
+      <form class="sal-cal-form-element " id="form" action="/" method="POST">
+        <h3 id="mon">
+          Calculate This Month's Salary&nbsp;&nbsp;&nbsp;<i
+            id="re"
+            onClick="window.location.reload();"
+            class="fa-solid fa-rotate-right"
+          ></i>
+        </h3>
+        <h3 id="error"></h3>
+        <label class="in">Monthly Salary Amount</label>
+        <input
+          name="Salary Amount"
+          type="number"
+          id="sal-amount"
+          placeholder="Enter your Monthly Salary Amount"
+          required
+        />
 
-    
-<form class="sal-cal-form-element" id="form" action="/" method="POST">
+        <label class="in">Total Number of Night shifts</label>
+        <input
+          name="Number of Night Shifts"
+          type="number"
+          id="night-shifts"
+          placeholder="Enter Number of Night shifts"
+          value="0"
+        />
 
-    <h3 id="mon">Calculate This Month's Salary&nbsp;&nbsp;&nbsp;<i id="re" onClick='window.location.reload();' class="fa-solid fa-rotate-right"></i></h3>
-    <h3 id="error"></h3>
-    <label class="in">Monthly Salary Amount</label>
-    <input name="Salary Amount" type="number" id="sal-amount" placeholder="Enter your Monthly Salary Amount"  required>
+        <label class="in">Total Number of OTs</label>
+        <input
+          name="Number of OTs"
+          type="number"
+          id="ots"
+          placeholder="Enter Number of overtime"
+          value="0"
+        />
 
-    <label class="in">Total Number of Night shifts</label>
-    <input name="Number of Night Shifts" type="number" id="night-shifts" placeholder="Enter Number of Night shifts"  value="0" >
+        <label class="in">Total Number of Lunch/Dinner(optional)</label>
+        <input
+          name="Number of Lunch/Dinner"
+          type="number"
+          id="food"
+          placeholder="Enter Lunch Eaten"
+          value="0"
+        />
 
-    <label class="in">Total Number of OTs</label>
-    <input name="Number of OTs" type="number" id="ots" placeholder="Enter Number of overtime" value="0" >
+        <label class="in">Eid Bonus</label>
+        <select id="eid-bonus">
+          <option name="Eid Coverage No" value="no">No</option>
+          <option name="Eid Coverage Yes" value="yes">Yes</option>
+        </select>
 
-    <label class="in">Total Number of Lunch/Dinner(optional)</label>
-    <input name="Number of Lunch/Dinner" type="number" id="food" placeholder="Enter Lunch Eaten" value="0" >
+        <label class="in">Number of Eid Coverages</label>
+        <select id="eid-cov">
+          <option name="Eid Coverage No" value="0">0</option>
+          <option name="Eid Coverage Yes" value="1">1</option>
+          <option name="Eid Coverage Yes" value="2">2</option>
+          <option name="Eid Coverage Yes" value="3">3</option>
+        </select>
 
-    
-    <label class="in">Eid Bonus</label>
-    <select id="eid-bonus">
-      <option name="Eid Coverage No"value="no">No</option>
-      <option name="Eid Coverage Yes" value="yes">Yes</option>
-    </select>
+        <button type="submit" id="submit">Calculate Now!</button>
+        <h3 id="result-div"></h3>
+      </form>
 
-    <label class="in">Number of Eid Coverages</label>
-    <select id="eid-cov">
-      <option name="Eid Coverage No"value="0">0</option>
-      <option name="Eid Coverage Yes"value="1">1</option>
-      <option name="Eid Coverage Yes" value="2">2</option>
-      <option name="Eid Coverage Yes" value="3">3</option>
-    </select>
-    
-    <button type="submit" id="submit">Calculate Now!</button>
-    <h3 id="result-div"></h3> 
-  </form>
-<section class="sal-cal-hero-img"> 
-  <figure><img class="hero" src="images/hero.png" alt="card"></figure>
-</section>
-</div>
 
-<!-- <div class="frame-1">
+
+      <div id="table__wrapper">
+        <h1>Salary Details</h1>
+        <p id="mon-output">For the month of October, 2022</p>
+  
+        <table id="table__container">
+          <tr>
+            <th>Description</th>
+            <th>Amount(Tk.)</th>
+          </tr>
+          <tr>
+            <td >Net Salary (For 30 days)</td>
+            <td id="table__salary"></td>
+          </tr>
+  
+          <tr>
+            <td>Total Night Allowance</td>
+            <td id="table__night"></td>
+          </tr>
+          <tr>
+            <td>Lunch</td>
+            <td id="table__lunch"></td>
+          </tr>
+          <tr id="creator">
+            <!-- <td id="table__ot_header">N Numbers of OT's</td>
+            <td id="table__ot"></td> -->
+          </tr>
+          <tr>
+            <th >Net Payable</th>
+            <th id="table__total"></th>
+          </tr>
+        </table>
+      </div>
+
+      <section class="sal-cal-hero-img">
+        <figure><img class="hero" src="images/hero.png" alt="card" /></figure>
+      </section>
+
+
+
+    </div>
+
+    <!-- <div class="frame-1">
 <div class="center frame-1_headline">
   This is a<br/>testing element
 </div>
 </div> -->
-<script src="js/script.js"></script>
-  </body>  
+
+    
+    <script src="js/script.js"></script>
+  </body>
 </html>

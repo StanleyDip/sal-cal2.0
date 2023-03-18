@@ -141,3 +141,42 @@ input[type=number] {
     }
 
 }
+
+#ot_hidder{
+visibility: hidden;
+opacity: 0;
+}
+.hider{
+    visibility: hidden;
+}
+#table__wrapper{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+#table__container{
+    border-collapse: collapse;
+    width: 100%;
+}
+#table__container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #table__container td, #table__container th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #table__container tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #table__container tr:hover {background-color: #ddd;}
