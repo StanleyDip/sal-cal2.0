@@ -61,7 +61,7 @@ success= false;
                 document.getElementById('error').remove();
                 mon.style.opacity="1";
                 mon.innerHTML=month+" Month's Salary: &nbsp;&nbsp;&nbsp;<i id='re' onClick='window.location.reload();' class='fa-solid fa-rotate-right'></i>";
-                document.getElementById('result-div').innerHTML="You have got approximately: "+ calculation +"Tk"+ "";
+                // document.getElementById('result-div').innerHTML="You have got approximately: "+ calculation +"Tk"+ "";
             }
             else{
                 mon.style.opacity="0";
@@ -72,18 +72,67 @@ success= false;
             if(arr.OTs>0){
                 var td1 = document.createElement('td');
                 var td2 = document.createElement('td');
-                td1.setAttribute('id', 'table__ot_header');
-                td2.setAttribute('id', 'table__ot');
-                document.getElementById('creator').appendChild(td1);
-                document.getElementById('creator').appendChild(td2);
-            document.getElementById('table__ot_header').innerHTML= "Total "+arr.OTs+" OT's received";          
-        document.getElementById('table__ot').innerHTML= ot_amount;
+                td1.setAttribute('id', 'table_ot_header');
+                td2.setAttribute('id', 'table_ot');
+                document.getElementById('creator_ot').appendChild(td1);
+                document.getElementById('creator_ot').appendChild(td2);
+            document.getElementById('table_ot_header').innerHTML= "Total "+arr.OTs+" OT's received";          
+        document.getElementById('table_ot').innerHTML="+"+ot_amount;
+            }
+            if(arr.Food>0){
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                td1.setAttribute('id', 'table_lunch_header');
+                td2.setAttribute('id', 'table_lunch');
+                document.getElementById('creator_lunch').appendChild(td1);
+                document.getElementById('creator_lunch').appendChild(td2);
+                document.getElementById('table_lunch_header').innerHTML= "Lunch";          
+                document.getElementById('table_lunch').innerHTML="-"+arr.Food*30;
             }
 
-        document.getElementById('table__salary').innerHTML=arr.SalaryAmount;
-        document.getElementById('table__lunch').innerHTML=arr.Food*30;
-        document.getElementById('table__night').innerHTML=night_allowance;
-        document.getElementById('table__total').innerHTML=calculation;
+            if(arr.NightShifts>0){
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                td1.setAttribute('id', 'table_night_header');
+                td2.setAttribute('id', 'table_night');
+                document.getElementById('creator_night').appendChild(td1);
+                document.getElementById('creator_night').appendChild(td2);
+                document.getElementById('table_night_header').innerHTML= "Total Night Allowance";          
+                document.getElementById('table_night').innerHTML="+"+night_allowance;
+            }
+            if(Eid_bonus){
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                td1.setAttribute('id', 'table_eid_bonus_header');
+                td2.setAttribute('id', 'table_eid_bonus');
+                document.getElementById('creator_eid_bonus').appendChild(td1);
+                document.getElementById('creator_eid_bonus').appendChild(td2);
+                document.getElementById('table_eid_bonus_header').innerHTML= "Eid Bonus";          
+                document.getElementById('table_eid_bonus').innerHTML="+"+Eid_bonus;
+            }
+            if(Eid_coverages){
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                td1.setAttribute('id', 'table_eid_bonus_coverage_header');
+                td2.setAttribute('id', 'table_eid_bonus_coverage');
+                document.getElementById('creator_eid_bonus_coverage').appendChild(td1);
+                document.getElementById('creator_eid_bonus_coverage').appendChild(td2);
+                document.getElementById('table_eid_bonus_coverage_header').innerHTML= "Eid Coverage";          
+                document.getElementById('table_eid_bonus_coverage').innerHTML="+"+Eid_coverages;
+            }
+
+        document.getElementById('table_salary').innerHTML=arr.SalaryAmount;
+
+
+        document.getElementById('table_total').innerHTML="="+calculation;
+        document.getElementById('submit_2').style.visibility="visible";
+        document.getElementById('submit_2').style.opacity="1";
+        document.getElementById('table__wrapper').style.visibility="visible";
+        document.getElementById('table__wrapper').style.opacity="1";
+
+        let remove_elem=document.getElementById('form');
+        let parent_elem=remove_elem.parentNode;
+        parent_elem.removeChild(remove_elem);
         }
 
 }

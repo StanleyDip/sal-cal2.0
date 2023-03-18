@@ -142,15 +142,15 @@ input[type=number] {
 
 }
 
-#ot_hidder{
-visibility: hidden;
-opacity: 0;
+#submit_2{
+    margin-top: 20px;
 }
-.hider{
+.hide{
     visibility: hidden;
+    opacity: 0;
 }
 #table__wrapper{
-    width: 30%;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,8 +168,8 @@ opacity: 0;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #04AA6D;
-    color: white;
+    background-color:#38d398;
+    color: black;
   }
 
   #table__container td, #table__container th {

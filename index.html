@@ -91,7 +91,7 @@
 
 
 
-      <div id="table__wrapper">
+      <div id="table__wrapper" class="hide">
         <h1>Salary Details</h1>
         <p id="mon-output">For the month of October, 2022</p>
   
@@ -102,26 +102,25 @@
           </tr>
           <tr>
             <td >Net Salary (For 30 days)</td>
-            <td id="table__salary"></td>
+            <td id="table_salary"></td>
           </tr>
   
-          <tr>
-            <td>Total Night Allowance</td>
-            <td id="table__night"></td>
+          <tr id="creator_night">
           </tr>
-          <tr>
-            <td>Lunch</td>
-            <td id="table__lunch"></td>
+          <tr id="creator_lunch">
           </tr>
-          <tr id="creator">
-            <!-- <td id="table__ot_header">N Numbers of OT's</td>
-            <td id="table__ot"></td> -->
+          <tr id="creator_ot">
+          </tr>
+          <tr id="creator_eid_bonus">
+          </tr>
+          <tr id="creator_eid_bonus_coverage">
           </tr>
           <tr>
             <th >Net Payable</th>
-            <th id="table__total"></th>
+            <th id="table_total"></th>
           </tr>
         </table>
+        <button type="submit" id="submit_2" class="hide" onClick="window.location.reload();">Calculate Again!</button>
       </div>
 
       <section class="sal-cal-hero-img">
