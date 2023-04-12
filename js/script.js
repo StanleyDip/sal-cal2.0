@@ -42,7 +42,7 @@ success= false;
     let Eid_coverages=(arr.SalaryAmount/30)*2.85*arr.EidCoverage;
     let ot_amount;
     if(arr.EidBonus=="yes"&& arr.SalaryAmount>3000){
-        Eid_bonus=arr.SalaryAmount*0.4-2000;
+        Eid_bonus=(arr.SalaryAmount*0.38);
         calculation=calculation+Eid_bonus;
     }
     if(arr.SalaryAmount<39999){
