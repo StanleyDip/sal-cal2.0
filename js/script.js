@@ -39,16 +39,18 @@ success= false;
     let calculation=arr.SalaryAmount;
     let night_allowance;
     let Eid_bonus;
-    let Eid_coverages=(arr.SalaryAmount/30)*2.85*arr.EidCoverage;
+    let Eid_coverages;
     let ot_amount;
     if(arr.EidBonus=="yes"&& arr.SalaryAmount>3000){
         Eid_bonus=(arr.SalaryAmount*0.38);
         calculation=calculation+Eid_bonus;
     }
     if(arr.SalaryAmount<39999){
+        Eid_coverages=3333;
         night_allowance=250*arr.NightShifts;
      calculation=calculation+night_allowance;
     }else{
+        Eid_coverages=4000;
         night_allowance=400*arr.NightShifts;
        calculation= calculation+night_allowance; 
     }
