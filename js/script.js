@@ -24,6 +24,7 @@ arr["Food"]=parseInt(document.getElementById('food').value);
 
 
 function calculate(){
+    console.log(arr.EidCoverages);
     let success= true;
     const pattern= /^[0-9]\d*$/;
     const pattern1= /^[1-9]\d*$/;
@@ -46,14 +47,14 @@ success= false;
         calculation=calculation+Eid_bonus;
     }
     if(arr.SalaryAmount<39999){
-        Eid_coverages=3333;
+        Eid_coverages=Math.round((10000/3)*arr.EidCoverage);
         night_allowance=250*arr.NightShifts;
      calculation=calculation+night_allowance;
     }else{
-        Eid_coverages=4000;
+        Eid_coverages=(12000/3)*arr.EidCoverage;
         night_allowance=400*arr.NightShifts;
        calculation= calculation+night_allowance; 
-    }
+    }  
         calculation= calculation+(arr.SalaryAmount/30)*1.5*arr.OTs+Eid_coverages;
         calculation= calculation-arr.Food*30;
         if(!(isNaN(calculation))){
@@ -112,6 +113,7 @@ success= false;
                 document.getElementById('table_eid_bonus_header').innerHTML= "Eid Bonus";          
                 document.getElementById('table_eid_bonus').innerHTML="+"+Eid_bonus;
             }
+            console.log(Eid_coverages);
             if(Eid_coverages){
                 var td1 = document.createElement('td');
                 var td2 = document.createElement('td');
