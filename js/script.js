@@ -56,7 +56,7 @@ success= false;
        calculation= calculation+night_allowance; 
     }  
         calculation= calculation+(arr.SalaryAmount/30)*1.5*arr.OTs+Eid_coverages;
-        calculation= calculation-arr.Food*30;
+        calculation= calculation-arr.Food*50;
         if(!(isNaN(calculation))){
             if(success==true){
                 ot_amount=(arr.SalaryAmount/30)*1.5*arr.OTs;
@@ -90,7 +90,7 @@ success= false;
                 document.getElementById('creator_lunch').appendChild(td1);
                 document.getElementById('creator_lunch').appendChild(td2);
                 document.getElementById('table_lunch_header').innerHTML= "Lunch";          
-                document.getElementById('table_lunch').innerHTML="-"+arr.Food*30;
+                document.getElementById('table_lunch').innerHTML="-"+arr.Food*50;
             }
 
             if(arr.NightShifts>0){
