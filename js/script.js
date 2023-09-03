@@ -56,7 +56,18 @@ success= false;
        calculation= calculation+night_allowance; 
     }  
         calculation= calculation+(arr.SalaryAmount/30)*1.5*arr.OTs+Eid_coverages;
-        calculation= calculation-arr.Food*50;
+        //lunch deduction from sal
+        if(arr.SalaryAmount<=25000){
+            calculation= calculation-arr.Food*20;
+        }
+        else if(arr.SalaryAmount>=25001 && arr.SalaryAmount<=50000){
+            calculation= calculation-arr.Food*30;
+        }
+        else if(arr.SalaryAmount>50000){
+            calculation= calculation-arr.Food*50;
+        }
+
+
         if(!(isNaN(calculation))){
             if(success==true){
                 ot_amount=(arr.SalaryAmount/30)*1.5*arr.OTs;
@@ -82,15 +93,27 @@ success= false;
             document.getElementById('table_ot_header').innerHTML= "Total "+arr.OTs+" OT's";          
         document.getElementById('table_ot').innerHTML="+"+ot_amount;
             }
-            if(arr.Food>0){
+            if(arr.Food>0 && arr.SalaryAmount>0){
+                var lunchAmount=0;
                 var td1 = document.createElement('td');
                 var td2 = document.createElement('td');
                 td1.setAttribute('id', 'table_lunch_header');
                 td2.setAttribute('id', 'table_lunch');
                 document.getElementById('creator_lunch').appendChild(td1);
                 document.getElementById('creator_lunch').appendChild(td2);
-                document.getElementById('table_lunch_header').innerHTML= "Lunch";          
-                document.getElementById('table_lunch').innerHTML="-"+arr.Food*50;
+                document.getElementById('table_lunch_header').innerHTML= "Lunch";  
+                //adding lunch by salary amount
+                if(arr.SalaryAmount<=25000){
+                    lunchAmount+=arr.Food*20;
+                }
+                else if(arr.SalaryAmount>=25001 && arr.SalaryAmount<=50000){
+                    lunchAmount+=arr.Food*30;
+                }
+                else if(arr.SalaryAmount>50000){
+                    lunchAmount+=arr.Food*50;
+                }
+
+                document.getElementById('table_lunch').innerHTML="-"+lunchAmount;
             }
 
             if(arr.NightShifts>0){
