@@ -40,19 +40,17 @@ success= false;
     let calculation=arr.SalaryAmount;
     let night_allowance;
     let Eid_bonus;
-    let Eid_coverages;
+    let Eid_coverages=15000;
     let ot_amount;
     if(arr.EidBonus=="yes"&& arr.SalaryAmount>3000){
         Eid_bonus=(arr.SalaryAmount*0.38);
         calculation=calculation+Eid_bonus;
     }
     if(arr.SalaryAmount<39999){
-        Eid_coverages=Math.round((10000/3)*arr.EidCoverage);
-        night_allowance=250*arr.NightShifts;
+        night_allowance=300*arr.NightShifts;
      calculation=calculation+night_allowance;
     }else{
-        Eid_coverages=(12000/3)*arr.EidCoverage;
-        night_allowance=400*arr.NightShifts;
+        night_allowance=450*arr.NightShifts;
        calculation= calculation+night_allowance; 
     }  
         calculation= calculation+(arr.SalaryAmount/30)*1.5*arr.OTs+Eid_coverages;
