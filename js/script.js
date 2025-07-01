@@ -3,10 +3,10 @@ const months = ["January","February","March","April","May","June","July","August
 const d = new Date();
 let month = months[d.getMonth()];
 let year =d.getFullYear();
-const mon = document.getElementById('mon');
-const mon_output=document.getElementById('mon-output');
-mon.innerHTML='Calculate The Salary of Month: '+month+"&nbsp;&nbsp;&nbsp;<i id='re' onClick='window.location.reload();' class='fa-solid fa-rotate-right'></i>";
-mon_output.innerHTML='For the month of '+month+", "+year;
+//const mon = document.getElementById('mon');
+//const mon_output=document.getElementById('mon-output');
+//mon.innerHTML='Calculate The Salary of Month: '+month+"&nbsp;&nbsp;&nbsp;<i id='re' onClick='window.location.reload();' class='fa-solid fa-rotate-right'></i>";
+//mon_output.innerHTML='For the month of '+month+", "+year;
 const form =document.getElementById('form');
 form.addEventListener('submit', (e)=>{
 e.preventDefault();

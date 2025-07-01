@@ -22,13 +22,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>SalCal2.0</title>
+    <title>Calculate Salary</title>
   </head>
   <body>
     <div class="sal-cal-main-container">
-      <form class="sal-cal-form-element " id="form" action="/" method="POST">
+      <form class="sal-cal-form-element" id="form" action="/" method="POST">
         <h3 id="mon">
-          Calculate This Month's Salary&nbsp;&nbsp;&nbsp;<i
+          Calculate Your Total Expected Payable &nbsp;&nbsp;&nbsp;<i
             id="re"
             onClick="window.location.reload();"
             class="fa-solid fa-rotate-right"
@@ -89,46 +89,43 @@
         <h3 id="result-div"></h3>
       </form>
 
-
-
       <div id="table__wrapper" class="hide">
         <h1>Salary Details</h1>
         <p id="mon-output">For the month of October, 2022</p>
-  
+
         <table id="table__container">
           <tr>
             <th>Description</th>
             <th>Amount(Tk.)</th>
           </tr>
           <tr>
-            <td >Net Salary (For 30 days)</td>
+            <td>Net Salary (For 30 days)</td>
             <td id="table_salary"></td>
           </tr>
-  
-          <tr id="creator_night">
-          </tr>
-          <tr id="creator_lunch">
-          </tr>
-          <tr id="creator_ot">
-          </tr>
-          <tr id="creator_eid_bonus">
-          </tr>
-          <tr id="creator_eid_bonus_coverage">
-          </tr>
+
+          <tr id="creator_night"></tr>
+          <tr id="creator_lunch"></tr>
+          <tr id="creator_ot"></tr>
+          <tr id="creator_eid_bonus"></tr>
+          <tr id="creator_eid_bonus_coverage"></tr>
           <tr>
-            <th >Net Payable</th>
+            <th>Net Payable</th>
             <th id="table_total"></th>
           </tr>
         </table>
-        <button type="submit" id="submit_2" class="hide" onClick="window.location.reload();">Calculate Again!</button>
+        <button
+          type="submit"
+          id="submit_2"
+          class="hide"
+          onClick="window.location.reload();"
+        >
+          Calculate Again!
+        </button>
       </div>
 
       <section class="sal-cal-hero-img">
         <figure><img class="hero" src="images/hero.png" alt="card" /></figure>
       </section>
-
-
-
     </div>
 
     <!-- <div class="frame-1">
@@ -137,7 +134,6 @@
 </div>
 </div> -->
 
-    
     <script src="js/script.js"></script>
   </body>
 </html>
