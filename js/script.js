@@ -24,7 +24,6 @@ arr["Food"]=parseInt(document.getElementById('food').value);
 
 
 function calculate(){
-    console.log(arr.EidCoverages);
     let success= true;
     const pattern= /^[0-9]\d*$/;
     const pattern1= /^[1-9]\d*$/;
@@ -40,16 +39,18 @@ success= false;
     let calculation=arr.SalaryAmount;
     let night_allowance;
     let Eid_bonus;
-    let Eid_coverages=15000;
+    let Eid_coverages;
     let ot_amount;
     if(arr.EidBonus=="yes"&& arr.SalaryAmount>3000){
         Eid_bonus=(arr.SalaryAmount*0.38);
         calculation=calculation+Eid_bonus;
     }
     if(arr.SalaryAmount<39999){
+        Eid_coverages=Math.round((15000/3)*arr.EidCoverage);
         night_allowance=300*arr.NightShifts;
      calculation=calculation+night_allowance;
     }else{
+        Eid_coverages=(15000/3)*arr.EidCoverage;
         night_allowance=450*arr.NightShifts;
        calculation= calculation+night_allowance; 
     }  
@@ -134,7 +135,6 @@ success= false;
                 document.getElementById('table_eid_bonus_header').innerHTML= "Eid Bonus";          
                 document.getElementById('table_eid_bonus').innerHTML="+"+Eid_bonus;
             }
-            console.log(Eid_coverages);
             if(Eid_coverages){
                 var td1 = document.createElement('td');
                 var td2 = document.createElement('td');
